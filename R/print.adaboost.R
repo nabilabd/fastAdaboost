@@ -22,11 +22,12 @@
 print.adaboost <-function(x,...)
 {
   object <- x
+  neat_wts <- paste(round(object$weights, 5), collapse = "  ")
   print(object$call)
   print(object$formula)
   cat("Dependent Variable: ", object$dependent_variable,"\n",sep="")
   cat("No of trees:",length(object$trees),"\n",sep="")
-  cat("The weights of the trees are:",object$weights,"\n",sep="")
+  cat("The weights of the trees are:", neat_wts,"\n",sep="")
 
 }
 
